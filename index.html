@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chhaparwal Bandhu – Exquisite Artificial Jewellery</title>
+  <meta name="description"
+    content="Chhaparwal Bandhu – Your trusted destination for premium artificial jewellery. Explore stunning necklaces, earrings, bangles, bridal sets and more." />
+  <meta name="keywords"
+    content="artificial jewellery, imitation jewellery, bridal jewellery, necklaces, earrings, bangles, rings, Chhaparwal Bandhu" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">♦</span>
+        <div class="logo-text">
+          <span class="logo-main">Chhaparwal Bandhu</span>
+          <span class="logo-sub">Artificial Jewellery</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="#collections" class="nav-link" id="nav-collections">Collections</a></li>
+        <li><a href="#featured" class="nav-link" id="nav-featured">Featured</a></li>
+        <li><a href="#about" class="nav-link" id="nav-about">About Us</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-search-btn" id="navSearchBtn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+        <button class="nav-cart-btn" id="navCartBtn" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="hero-overlay"></div>
+      <img src="jewellery_hero.png" alt="Chhaparwal Bandhu Jewellery Collection" class="hero-bg-img" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="sparkle">✦</span> Trusted Since 1985 <span class="sparkle">✦</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-title-line1">Chhaparwal</span>
+        <span class="hero-title-line2">Bandhu</span>
+      </h1>
+      <p class="hero-tagline">Where Beauty Meets Tradition</p>
+      <p class="hero-description">
+        Discover our exquisite collection of handcrafted artificial jewellery,
+        meticulously designed to celebrate every moment of your life.
+      </p>
+      <div class="hero-actions">
+        <a href="#collections" class="btn btn-primary" id="heroShopBtn">
+          Explore Collections
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#featured" class="btn btn-outline" id="heroFeaturedBtn">View Featured</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-count="5000">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="500">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Designs</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="38">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years of Trust</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to Explore</span>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE BANNER ===== -->
+  <div class="marquee-banner">
+    <div class="marquee-track">
+      <span>✦ Necklaces</span>
+      <span>✦ Earrings</span>
+      <span>✦ Bangles</span>
+      <span>✦ Rings</span>
+      <span>✦ Bridal Sets</span>
+      <span>✦ Anklets</span>
+      <span>✦ Hair Accessories</span>
+      <span>✦ Maang Tikka</span>
+      <span>✦ Necklaces</span>
+      <span>✦ Earrings</span>
+      <span>✦ Bangles</span>
+      <span>✦ Rings</span>
+      <span>✦ Bridal Sets</span>
+      <span>✦ Anklets</span>
+      <span>✦ Hair Accessories</span>
+      <span>✦ Maang Tikka</span>
+    </div>
+  </div>
+
+  <!-- ===== COLLECTIONS SECTION ===== -->
+  <section id="collections" class="collections-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Our Collections</span>
+        <h2 class="section-title">Explore Our Universe of Jewellery</h2>
+        <p class="section-subtitle">From timeless classics to contemporary designs — each piece tells a story of
+          artistry and elegance</p>
+      </div>
+
+      <div class="collections-grid">
+        <!-- Necklaces -->
+        <div class="collection-card" id="card-necklaces">
+          <div class="collection-img-wrap">
+            <img src="necklaces_collection.png" alt="Necklaces Collection" class="collection-img" loading="lazy" />
+            <div class="collection-overlay">
+              <button class="collection-view-btn" onclick="openModal('necklaces')">View All</button>
+            </div>
+            <div class="collection-badge-tag">New Arrivals</div>
+          </div>
+          <div class="collection-info">
+            <h3 class="collection-name">Necklaces</h3>
+            <p class="collection-desc">Traditional & modern necklace sets for every occasion</p>
+            <div class="collection-footer">
+              <span class="collection-price">From ₹299</span>
+              <button class="collection-arrow-btn" onclick="openModal('necklaces')"
+                aria-label="View Necklaces">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earrings -->
+        <div class="collection-card" id="card-earrings">
+          <div class="collection-img-wrap">
+            <img src="earrings_collection.png" alt="Earrings Collection" class="collection-img" loading="lazy" />
+            <div class="collection-overlay">
+              <button class="collection-view-btn" onclick="openModal('earrings')">View All</button>
+            </div>
+            <div class="collection-badge-tag">Bestseller</div>
+          </div>
+          <div class="collection-info">
+            <h3 class="collection-name">Earrings</h3>
+            <p class="collection-desc">Jhumkas, chandbalis, drops & studs for every style</p>
+            <div class="collection-footer">
+              <span class="collection-price">From ₹149</span>
+              <button class="collection-arrow-btn" onclick="openModal('earrings')" aria-label="View Earrings">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bangles -->
+        <div class="collection-card" id="card-bangles">
+          <div class="collection-img-wrap">
+            <img src="bangles_collection.png" alt="Bangles Collection" class="collection-img" loading="lazy" />
+            <div class="collection-overlay">
+              <button class="collection-view-btn" onclick="openModal('bangles')">View All</button>
+            </div>
+            <div class="collection-badge-tag">Trending</div>
+          </div>
+          <div class="collection-info">
+            <h3 class="collection-name">Bangles & Bracelets</h3>
+            <p class="collection-desc">Colorful glass & gold-tone bangles for wrist elegance</p>
+            <div class="collection-footer">
+              <span class="collection-price">From ₹199</span>
+              <button class="collection-arrow-btn" onclick="openModal('bangles')" aria-label="View Bangles">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rings -->
+        <div class="collection-card" id="card-rings">
+          <div class="collection-img-wrap">
+            <img src="rings_collection.png" alt="Rings Collection" class="collection-img" loading="lazy" />
+            <div class="collection-overlay">
+              <button class="collection-view-btn" onclick="openModal('rings')">View All</button>
+            </div>
+          </div>
+          <div class="collection-info">
+            <h3 class="collection-name">Rings</h3>
+            <p class="collection-desc">Kundan, stone & cocktail rings for a stunning look</p>
+            <div class="collection-footer">
+              <span class="collection-price">From ₹99</span>
+              <button class="collection-arrow-btn" onclick="openModal('rings')" aria-label="View Rings">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bridal Sets -->
+        <div class="collection-card collection-card--wide" id="card-bridal">
+          <div class="collection-img-wrap">
+            <img src="bridal_sets.png" alt="Bridal Sets Collection" class="collection-img" loading="lazy" />
+            <div class="collection-overlay">
+              <button class="collection-view-btn" onclick="openModal('bridal')">View All</button>
+            </div>
+            <div class="collection-badge-tag collection-badge-tag--gold">Premium</div>
+          </div>
+          <div class="collection-info">
+            <h3 class="collection-name">Bridal Sets</h3>
+            <p class="collection-desc">Complete bridal jewellery sets — necklace, earrings, maang tikka, bangles & more
+              for your special day</p>
+            <div class="collection-footer">
+              <span class="collection-price">From ₹999</span>
+              <button class="collection-arrow-btn" onclick="openModal('bridal')"
+                aria-label="View Bridal Sets">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS ===== -->
+  <section id="featured" class="featured-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Featured Picks</span>
+        <h2 class="section-title">Most Loved Pieces</h2>
+        <p class="section-subtitle">Handpicked favourites by our community of jewellery lovers</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-strip">
+        <button class="filter-btn active" id="filter-all" onclick="filterProducts('all')">All</button>
+        <button class="filter-btn" id="filter-necklaces" onclick="filterProducts('necklaces')">Necklaces</button>
+        <button class="filter-btn" id="filter-earrings" onclick="filterProducts('earrings')">Earrings</button>
+        <button class="filter-btn" id="filter-bangles" onclick="filterProducts('bangles')">Bangles</button>
+        <button class="filter-btn" id="filter-rings" onclick="filterProducts('rings')">Rings</button>
+        <button class="filter-btn" id="filter-bridal" onclick="filterProducts('bridal')">Bridal</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Why Us</span>
+        <h2 class="section-title">The Chhaparwal Bandhu Promise</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card" id="why-quality">
+          <div class="why-icon">💎</div>
+          <h3>Premium Quality</h3>
+          <p>Every piece is crafted with attention to detail using high-quality materials that are durable and
+            skin-friendly.</p>
+        </div>
+        <div class="why-card" id="why-price">
+          <div class="why-icon">🏷️</div>
+          <h3>Affordable Prices</h3>
+          <p>Luxury aesthetics at accessible prices — beautiful jewellery that doesn't break the bank.</p>
+        </div>
+        <div class="why-card" id="why-variety">
+          <div class="why-icon">✨</div>
+          <h3>500+ Designs</h3>
+          <p>From traditional Indian styles to contemporary fusion designs — find your perfect piece in our vast
+            collection.</p>
+        </div>
+        <div class="why-card" id="why-trust">
+          <div class="why-icon">🤝</div>
+          <h3>38+ Years of Trust</h3>
+          <p>A legacy of trust and customer satisfaction spanning over three decades of jewellery craftsmanship.</p>
+        </div>
+        <div class="why-card" id="why-bridal">
+          <div class="why-icon">👰</div>
+          <h3>Bridal Specialists</h3>
+          <p>Exclusive bridal collections and custom sets to make every bride's special day truly unforgettable.</p>
+        </div>
+        <div class="why-card" id="why-service">
+          <div class="why-icon">📞</div>
+          <h3>Personal Service</h3>
+          <p>Dedicated customer support to help you find the perfect piece for any occasion or budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Customer Love</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials-carousel" id="testimonialsCarousel">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"The bridal set I ordered was absolutely stunning! The quality is incredible for the price. My wedding
+              photos look magical thanks to Chhaparwal Bandhu!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">P</div>
+              <div>
+                <strong>Priya Sharma</strong>
+                <span>Bride, Jaipur</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"I've been buying from Chhaparwal Bandhu for 10 years. The jhumkas I got last week are my absolute
+              favorites — so intricate and beautiful!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div>
+                <strong>Anita Verma</strong>
+                <span>Regular Customer, Delhi</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"The customer service is outstanding. They helped me pick the perfect set for my sister's wedding mahendi
+              ceremony. Highly recommend!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div>
+                <strong>Sunita Gupta</strong>
+                <span>Customer, Mumbai</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"The bangles are so vibrant and well-made! I ordered a set for Navratri and received so many compliments.
+              Will definitely order again!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">R</div>
+              <div>
+                <strong>Rekha Patel</strong>
+                <span>Customer, Ahmedabad</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Absolutely love their collection! The necklace set with matching earrings is perfect for every ethnic
+              outfit. Great quality, great price!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div>
+                <strong>Meena Joshi</strong>
+                <span>Customer, Pune</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous testimonial">‹</button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next testimonial">›</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-block">
+          <div class="about-img-frame">
+            <img src="bridal_sets.png" alt="About Chhaparwal Bandhu" class="about-img" loading="lazy" />
+          </div>
+          <div class="about-tag-card">
+            <span class="about-tag-number">38+</span>
+            <span class="about-tag-text">Years of Excellence</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-badge">Our Story</span>
+          <h2 class="section-title" style="text-align:left;">Crafting Beauty Since 1985</h2>
+          <p class="about-text">
+            Founded in 1985, Chhaparwal Bandhu has been a trusted name in the world of artificial jewellery.
+            What started as a small family shop has grown into a beloved jewellery destination, serving thousands
+            of happy customers across India.
+          </p>
+          <p class="about-text">
+            We believe that every woman deserves to sparkle, regardless of budget. Our collection blends
+            traditional Indian craftsmanship with contemporary designs, offering something beautiful for
+            every occasion — from daily wear to grand bridal ceremonies.
+          </p>
+          <div class="about-features">
+            <div class="about-feature-item">
+              <span class="feature-check">✓</span>
+              <span>Skin-safe, hypoallergenic materials</span>
+            </div>
+            <div class="about-feature-item">
+              <span class="feature-check">✓</span>
+              <span>Traditional craftsmanship & modern designs</span>
+            </div>
+            <div class="about-feature-item">
+              <span class="feature-check">✓</span>
+              <span>Custom bridal & festive orders</span>
+            </div>
+            <div class="about-feature-item">
+              <span class="feature-check">✓</span>
+              <span>Wholesale & bulk orders available</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary" id="aboutContactBtn">
+            Get In Touch
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">We'd love to hear from you — enquire about our collections, custom orders, or visit
+          our store</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form-block">
+          <form id="contactForm" class="contact-form" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formName">Your Name</label>
+                <input type="text" id="formName" name="name" placeholder="Priya Sharma" required />
+              </div>
+              <div class="form-group">
+                <label for="formPhone">Phone Number</label>
+                <input type="tel" id="formPhone" name="phone" placeholder="+91 93525 70105" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="formEmail">Email Address</label>
+              <input type="email" id="formEmail" name="email" placeholder="priya@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="formCategory">Interested In</label>
+              <select id="formCategory" name="category">
+                <option value="">Select a Category</option>
+                <option>Necklaces</option>
+                <option>Earrings</option>
+                <option>Bangles & Bracelets</option>
+                <option>Rings</option>
+                <option>Bridal Sets</option>
+                <option>Wholesale / Bulk Order</option>
+                <option>Custom Order</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" name="message"
+                placeholder="Tell us about your enquiry or what you're looking for..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit-btn" id="formSubmitBtn">
+              Send Enquiry
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m22 2-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess" style="display:none;">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>We've received your enquiry and will get back to you soon.</p>
+          </div>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-card" id="contact-address">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <h4>Visit Our Store</h4>
+              <p>Mandir Marg, Nathdwara<br />Rajasthan</p>
+            </div>
+          </div>
+          <div class="contact-info-card" id="contact-phone">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <h4>Call Us</h4>
+              <p><a href="tel:+919352570105">+91 93525 70105</a><br /><a href="tel:+918619686224">+91 86196 86224</a></p>
+            </div>
+          </div>
+          <div class="contact-info-card" id="contact-email">
+            <div class="contact-info-icon">✉️</div>
+            <div>
+              <h4>Email Us</h4>
+              <p><a href="mailto:info@chhaparwalbandhu.com">info@chhaparwalbandhu.com</a></p>
+            </div>
+          </div>
+          <div class="social-links">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#" class="social-btn" id="social-instagram" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+              </a>
+              <a href="#" class="social-btn" id="social-facebook" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a href="#" class="social-btn" id="social-whatsapp" aria-label="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 12s.5 2 4 2 4-2 4-2" />
+                  <line x1="9" y1="9" x2="9.01" y2="9" />
+                  <line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>
+              </a>
+              <a href="#" class="social-btn" id="social-youtube" aria-label="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.57A2.78 2.78 0 0 0 3.41 19.5C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-icon">♦</span>
+              <div>
+                <span class="logo-main">Chhaparwal Bandhu</span>
+                <span class="logo-sub">Artificial Jewellery</span>
+              </div>
+            </div>
+            <p class="footer-brand-desc">Your trusted destination for premium artificial jewellery since 1985. Crafting
+              beauty, celebrating tradition, one piece at a time.</p>
+          </div>
+          <div class="footer-links-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#featured">Featured</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h5>Collections</h5>
+            <ul>
+              <li><a href="#collections">Necklaces</a></li>
+              <li><a href="#collections">Earrings</a></li>
+              <li><a href="#collections">Bangles</a></li>
+              <li><a href="#collections">Rings</a></li>
+              <li><a href="#collections">Bridal Sets</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h5>Policies</h5>
+            <ul>
+              <li><a href="#" onclick="openPolicy('privacy'); return false;">Privacy Policy</a></li>
+              <li><a href="#" onclick="openPolicy('return'); return false;">Return Policy</a></li>
+              <li><a href="#" onclick="openPolicy('shipping'); return false;">Shipping Policy</a></li>
+              <li><a href="#" onclick="openPolicy('terms'); return false;">Terms of Service</a></li>
+              <li><a href="#" onclick="openPolicy('faq'); return false;">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Chhaparwal Bandhu. All Rights Reserved. Made with ♥ in India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" id="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" id="modalCloseBtn" onclick="closeModal()" aria-label="Close Modal">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button onclick="closeCart()" aria-label="Close cart" id="cartCloseBtn">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛍️</div>
+        <p>Your cart is empty</p>
+        <a href="#collections" onclick="closeCart()" class="btn btn-primary btn-sm">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn" onclick="checkout()">📱 Order via WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== SEARCH OVERLAY ===== -->
+  <div class="search-overlay" id="searchOverlay" onclick="closeSearch(event)">
+    <div class="search-panel" id="searchPanel">
+      <div class="search-header">
+        <div class="search-input-wrap">
+          <svg class="search-icon-input" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search jewellery... e.g. necklace, jhumka, bridal"
+            autocomplete="off"
+            oninput="handleSearch(this.value)"
+          />
+          <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearch()" aria-label="Clear search">✕</button>
+        </div>
+        <button class="search-close-btn" id="searchCloseBtn" onclick="closeSearch()" aria-label="Close search">Close</button>
+      </div>
+
+      <div class="search-body" id="searchBody">
+        <!-- Default state -->
+        <div class="search-suggestions" id="searchSuggestions">
+          <p class="search-hint">Popular Searches</p>
+          <div class="search-tags">
+            <button class="search-tag" onclick="quickSearch('Necklace')">Necklace</button>
+            <button class="search-tag" onclick="quickSearch('Jhumka')">Jhumka</button>
+            <button class="search-tag" onclick="quickSearch('Bridal')">Bridal Set</button>
+            <button class="search-tag" onclick="quickSearch('Bangle')">Bangle</button>
+            <button class="search-tag" onclick="quickSearch('Ring')">Ring</button>
+            <button class="search-tag" onclick="quickSearch('Kundan')">Kundan</button>
+            <button class="search-tag" onclick="quickSearch('Earring')">Earring</button>
+            <button class="search-tag" onclick="quickSearch('Gold')">Gold Tone</button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="search-results" id="searchResults" style="display:none;">
+          <p class="search-results-count" id="searchResultsCount"></p>
+          <div class="search-results-grid" id="searchResultsGrid"></div>
+        </div>
+
+        <!-- No results -->
+        <div class="search-no-results" id="searchNoResults" style="display:none;">
+          <div class="no-results-icon">🔍</div>
+          <h3>No results found</h3>
+          <p>Try a different keyword like "necklace", "bangle" or "bridal"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== POLICY MODAL ===== -->
+  <div class="policy-overlay" id="policyOverlay" onclick="closePolicyModal(event)">
+    <div class="policy-modal" id="policyModal" onclick="event.stopPropagation()">
+      <div class="policy-modal-header">
+        <div class="policy-modal-title-wrap">
+          <span class="policy-modal-icon" id="policyIcon"></span>
+          <h2 class="policy-modal-title" id="policyTitle"></h2>
+        </div>
+        <button class="policy-modal-close" id="policyCloseBtn" onclick="closePolicyModal()" aria-label="Close Policy">✕</button>
+      </div>
+      <div class="policy-modal-body" id="policyBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

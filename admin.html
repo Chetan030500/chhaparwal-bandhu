@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel – Chhaparwal Bandhu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ===== LOGIN SCREEN ===== -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-logo">
+        <span class="logo-gem">♦</span>
+        <div>
+          <div class="login-brand">Chhaparwal Bandhu</div>
+          <div class="login-sub">Admin Panel</div>
+        </div>
+      </div>
+      <h2 class="login-title">Sign In</h2>
+      <p class="login-desc">Enter your credentials to manage products</p>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="field-group">
+          <label>Username</label>
+          <input type="text" id="loginUsername" placeholder="admin" autocomplete="username" required />
+        </div>
+        <div class="field-group">
+          <label>Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password" required />
+            <button type="button" class="pw-toggle" onclick="togglePw()" id="pwToggle">👁</button>
+          </div>
+        </div>
+        <div class="login-error" id="loginError"></div>
+        <button type="submit" class="btn-login" id="loginBtn">Sign In</button>
+      </form>
+      <p class="login-hint">Default: <strong>admin</strong> / <strong>admin123</strong></p>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN DASHBOARD ===== -->
+  <div class="admin-app" id="adminApp" style="display:none;">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-gem">♦</span>
+        <div>
+          <div class="sidebar-brand">Chhaparwal Bandhu</div>
+          <div class="sidebar-sub">Admin Panel</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" id="nav-products">
+          <span class="nav-icon">🛍️</span> Products
+        </a>
+        <a href="index.html" target="_blank" class="sidebar-link" id="nav-site">
+          <span class="nav-icon">🌐</span> View Website
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="btn-logout" onclick="logout()">🚪 Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <!-- Top Bar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <h1 class="topbar-title">Product Management</h1>
+          <span class="topbar-count" id="productCount">0 products</span>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-search-wrap">
+            <input type="text" id="adminSearch" class="admin-search" placeholder="Search products..." oninput="filterAdminProducts(this.value)" />
+          </div>
+          <button class="btn-add-product" id="addProductBtn" onclick="openProductModal()">
+            + Add Product
+          </button>
+        </div>
+      </header>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-card" id="stat-total">
+          <div class="stat-icon">📦</div>
+          <div>
+            <div class="stat-val" id="statTotal">0</div>
+            <div class="stat-lbl">Total Products</div>
+          </div>
+        </div>
+        <div class="stat-card" id="stat-sale">
+          <div class="stat-icon">🏷️</div>
+          <div>
+            <div class="stat-val" id="statSale">0</div>
+            <div class="stat-lbl">On Sale</div>
+          </div>
+        </div>
+        <div class="stat-card" id="stat-popular">
+          <div class="stat-icon">⭐</div>
+          <div>
+            <div class="stat-val" id="statPopular">0</div>
+            <div class="stat-lbl">Popular</div>
+          </div>
+        </div>
+        <div class="stat-card" id="stat-new">
+          <div class="stat-icon">✨</div>
+          <div>
+            <div class="stat-val" id="statNew">0</div>
+            <div class="stat-lbl">New Arrivals</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="admin-filter-tabs">
+        <button class="admin-tab active" onclick="setAdminTab('all', this)">All</button>
+        <button class="admin-tab" onclick="setAdminTab('necklaces', this)">Necklaces</button>
+        <button class="admin-tab" onclick="setAdminTab('earrings', this)">Earrings</button>
+        <button class="admin-tab" onclick="setAdminTab('bangles', this)">Bangles</button>
+        <button class="admin-tab" onclick="setAdminTab('rings', this)">Rings</button>
+        <button class="admin-tab" onclick="setAdminTab('bridal', this)">Bridal</button>
+      </div>
+
+      <!-- Products Table -->
+      <div class="table-wrap">
+        <table class="product-table" id="productTable">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Original Price</th>
+              <th>Tag</th>
+              <th>Rating</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody">
+          </tbody>
+        </table>
+        <div class="table-empty" id="tableEmpty" style="display:none;">
+          <div style="font-size:2.5rem;margin-bottom:12px">📦</div>
+          <p>No products found</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ===== ADD / EDIT PRODUCT MODAL ===== -->
+  <div class="modal-backdrop" id="productModalBackdrop" onclick="closeProductModal(event)">
+    <div class="product-modal" id="productModal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Add New Product</h2>
+        <button class="modal-close-btn" onclick="closeProductModal()" aria-label="Close">✕</button>
+      </div>
+      <form id="productForm" onsubmit="saveProduct(event)">
+        <input type="hidden" id="editProductId" value="" />
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="field-group">
+              <label for="pName">Product Name <span class="req">*</span></label>
+              <input type="text" id="pName" placeholder="e.g. Royal Kundan Necklace Set" required />
+            </div>
+            <div class="field-group">
+              <label for="pCategory">Category <span class="req">*</span></label>
+              <select id="pCategory" required>
+                <option value="">Select Category</option>
+                <option value="necklaces">Necklaces</option>
+                <option value="earrings">Earrings</option>
+                <option value="bangles">Bangles &amp; Bracelets</option>
+                <option value="rings">Rings</option>
+                <option value="bridal">Bridal Sets</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field-group">
+              <label for="pPrice">Sale Price (₹) <span class="req">*</span></label>
+              <input type="number" id="pPrice" placeholder="e.g. 899" min="1" required />
+              <span class="field-hint">The price customers see</span>
+            </div>
+            <div class="field-group">
+              <label for="pOldPrice">Original Price (₹) <span class="optional">(optional — for strikethrough)</span></label>
+              <input type="number" id="pOldPrice" placeholder="e.g. 1299 — leave blank if no sale" min="1" />
+              <span class="field-hint">Shows as crossed-out original price</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field-group">
+              <label for="pTag">Badge / Tag</label>
+              <select id="pTag">
+                <option value="">None</option>
+                <option value="new">✨ New Arrival</option>
+                <option value="popular">⭐ Popular</option>
+                <option value="sale">🏷️ Sale</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="pImage">Product Image</label>
+              <select id="pImage">
+                <option value="necklaces_collection.png">Necklaces Image</option>
+                <option value="earrings_collection.png">Earrings Image</option>
+                <option value="bangles_collection.png">Bangles Image</option>
+                <option value="rings_collection.png">Rings Image</option>
+                <option value="bridal_sets.png">Bridal Sets Image</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field-group">
+              <label for="pRating">Rating (1–5)</label>
+              <input type="number" id="pRating" placeholder="e.g. 4.8" min="1" max="5" step="0.1" value="4.5" />
+            </div>
+            <div class="field-group">
+              <label for="pReviews">Review Count</label>
+              <input type="number" id="pReviews" placeholder="e.g. 48" min="0" value="24" />
+            </div>
+          </div>
+
+          <!-- Sale Preview -->
+          <div class="sale-preview" id="salePreview">
+            <div class="sale-preview-label">Preview:</div>
+            <div class="sale-preview-price">
+              <span class="preview-new-price" id="previewNewPrice">₹—</span>
+              <span class="preview-old-price" id="previewOldPrice"></span>
+              <span class="preview-badge" id="previewBadge"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" onclick="closeProductModal()">Cancel</button>
+          <button type="submit" class="btn-save" id="saveBtn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="admin-toast" id="adminToast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
