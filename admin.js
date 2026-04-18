@@ -198,6 +198,30 @@ function getCategoryLabel(cat) {
 }
 
 // ============ PRODUCT MODAL ============
+let currentUploadedImageBase64 = null;
+
+// The input element is available synchronously since script is at end of body.
+// Wait until DOMContentLoaded just in case it runs earlier though.
+document.addEventListener("DOMContentLoaded", () => {
+  const fileInput = document.getElementById("pImageUpload");
+  if (fileInput) {
+    fileInput.addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          currentUploadedImageBase64 = evt.target.result;
+          document.getElementById('pImagePreview').src = currentUploadedImageBase64;
+          document.getElementById('pImagePreviewContainer').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        currentUploadedImageBase64 = null;
+      }
+    });
+  }
+});
+
 function openProductModal(id = null) {
   const modalTitle = document.getElementById('modalTitle');
   const saveBtn = document.getElementById('saveBtn');
@@ -205,6 +229,10 @@ function openProductModal(id = null) {
 
   form.reset();
   document.getElementById('editProductId').value = '';
+  document.getElementById('pExistingImage').value = '';
+  document.getElementById('pImagePreviewContainer').style.display = 'none';
+  document.getElementById('pImagePreview').src = '';
+  currentUploadedImageBase64 = null;
 
   if (id !== null) {
     // Edit mode
@@ -219,7 +247,11 @@ function openProductModal(id = null) {
     document.getElementById('pPrice').value = p.price;
     document.getElementById('pOldPrice').value = p.oldPrice || '';
     document.getElementById('pTag').value = p.tag || '';
-    document.getElementById('pImage').value = p.image;
+    document.getElementById('pExistingImage').value = p.image || '';
+    if (p.image) {
+      document.getElementById('pImagePreview').src = p.image;
+      document.getElementById('pImagePreviewContainer').style.display = 'block';
+    }
     document.getElementById('pRating').value = p.rating;
     document.getElementById('pReviews').value = p.reviews;
   } else {
@@ -285,7 +317,8 @@ function saveProduct(e) {
   const oldPriceRaw = document.getElementById('pOldPrice').value;
   const oldPrice = oldPriceRaw ? parseInt(oldPriceRaw) : null;
   const tag = document.getElementById('pTag').value || null;
-  const image = document.getElementById('pImage').value;
+  const existingImage = document.getElementById('pExistingImage').value;
+  const image = currentUploadedImageBase64 || existingImage || 'necklaces_collection.png';
   const rating = parseFloat(document.getElementById('pRating').value) || 4.5;
   const reviews = parseInt(document.getElementById('pReviews').value) || 24;
 

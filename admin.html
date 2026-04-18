@@ -206,15 +206,14 @@
                 <option value="sale">🏷️ Sale</option>
               </select>
             </div>
-            <div class="field-group">
-              <label for="pImage">Product Image</label>
-              <select id="pImage">
-                <option value="necklaces_collection.png">Necklaces Image</option>
-                <option value="earrings_collection.png">Earrings Image</option>
-                <option value="bangles_collection.png">Bangles Image</option>
-                <option value="rings_collection.png">Rings Image</option>
-                <option value="bridal_sets.png">Bridal Sets Image</option>
-              </select>
+            <div class="field-group" style="grid-column: span 1;">
+              <label for="pImageUpload">Product Image</label>
+              <input type="file" id="pImageUpload" accept="image/*" />
+              <input type="hidden" id="pExistingImage" />
+              <span class="field-hint">Upload a new image, or leave empty for existing.</span>
+              <div id="pImagePreviewContainer" style="margin-top: 8px; display: none;">
+                <img id="pImagePreview" src="" alt="Preview" style="max-height: 50px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.2);" />
+              </div>
             </div>
           </div>
 
